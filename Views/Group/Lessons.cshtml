@@ -1,0 +1,143 @@
+﻿@{
+	ViewData["Title"] = "Группа";
+}
+
+<div class="container d-flex justify-content-center align-middle h-full">
+	<div class="col w-85 h-full m-0 mt-2">
+		<div class="row w-full h-25 m-0 mt-sm-3 bg-white pt-3 drop-shadow d-flex justify-content-center align-items-centerv">
+			<div class="row h-25 ms-lg-3">
+				<div class="row">
+					<h5>Онлайн вт чт 20:00   <img src="~/icons/online.svg" width="20px" height="20px" /></h5>
+				</div>
+				<div class="row">
+					<span>Python Start 2021/2022 - 2й год</span>
+				</div>
+			</div>
+			<div class="row h-50 d-flex justify-content-center align-items-center">
+				<div class="row w-full h-full">
+					<div class="col-2 h-full">
+						<div class="row w-full h-full d-flex justify-content-center align-items-center">
+							<div class="col-2 h-50 d-flex justify-content-center align-items-center">
+								<img src="~/icons/students.svg" />
+							</div>
+							<div class="col-1">
+							</div>
+							<div class="col-2 h-50 d-flex justify-content-center align-items-center">
+								<h1>10</h1>
+							</div>
+						</div>
+					</div>
+					<div class="col-5 h-full">
+						<div class="row w-full h-full d-flex justify-content-center align-items-center">
+							<div class="col-2 h-50 d-flex flex-row justify-content-center align-items-center">
+								<img src="~/icons/teacher.svg" />
+							</div>
+							<div class="col-6 h-full d-flex flex-column justify-content-center align-items-center">
+								<span style="width: max-content;">Сергей Калуцкий</span>
+								<span style="width: max-content;">+79998571894</span>
+								<span style="width: max-content;">skalutsky@gmail.com</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-5 h-full">
+						<div class="row w-full h-full d-flex justify-content-center align-items-center">
+							<div class="col-2 h-50 d-flex flex-row justify-content-center align-items-center">
+								<img src="~/icons/curator.svg" />
+							</div>
+							<div class="col-6 h-full d-flex flex-column justify-content-center align-items-center">
+								<span style="width: max-content;">Новаченко Юлия</span>
+								<span style="width: max-content;">+7 (777) 921-06-25</span>
+								<span style="width: max-content;">n.Julie.tt74@gmail.com</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row w-full h-5 m-0 bg-white mt-2 drop-shadow">
+			<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 cursor-pointer">
+				<span class="h-75 d-flex align-self-center font-medium">
+					<a asp-area="" asp-controller="Group" asp-action="Index">Ученики</a>
+				</span>
+			</div>
+			<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 bg-change-slate-300 cursor-pointer">
+				<span class="h-75 d-flex align-self-center font-medium">
+					<a asp-area="" asp-controller="Group" asp-action="Lessons">Уроки</a>
+				</span>
+			</div>
+			<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 cursor-pointer">
+				<span class="h-75 d-flex align-self-center font-medium">
+					<a asp-area="" asp-controller="Group" asp-action="History">История группы</a>
+				</span>
+			</div>
+			<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 cursor-pointer">
+				<span class="h-75 d-flex align-self-center font-medium">
+					<a asp-area="" asp-controller="Group" asp-action="Notes">Заметки</a>
+				</span>
+			</div>
+		</div>
+		<div class="row overflow-auto w-full h-full m-0 mt-sm-3 bg-white d-flex justify-content-center align-middle drop-shadow">
+			<table class="table table-sm w-85">
+				<thead style="height:50px !important">
+					<tr>
+						<th scope="col">Дата</th>
+						<th scope="col">Время</th>
+						<th scope="col">Урок</th>
+						<th scope="col">Статус</th>
+						<th style="width:40px; height:30px">
+							<img src="~/icons/presentation.svg" />
+						</th>
+						<th style="width:40px; height:30px">
+							<img src="~/icons/document.svg" />
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					@for (int i = 0; i < 18; i++)
+					{
+						<tr>
+							<td><p><input placeholder="08/09/2023" type="text" class="datepicker"></p></td>
+							<td>20:00 — 21:30 </td>
+							<td>Введение</td>
+							<td>
+								<div class="btn-group dropright">
+									@if (i < 3)
+									{
+										<button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											Открыт
+										</button>
+									}
+									else
+									{
+										<button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											Закрыт
+										</button>
+									}
+									<div class="dropdown-menu">
+										<a class="dropdown-item">Закрыт</a>
+										<a class="dropdown-item">Открыт</a>
+									</div>
+								</div>
+							</td>
+							<td style="width:30px; height:30px">
+								<a target="_blank" href="https://docs.google.com/presentation/d/1JOszvqIZiqHJitAHlUHy3PWwQvO_vrsx/edit?usp=drive_link&ouid=107133456588313942648&rtpof=true&sd=true">
+									<span class="avatar-user hover-bg-change-slate-300 cursor-pointer">
+										<img src="~/icons/arrow-up-right.svg" />
+									</span>
+								</a>
+							</td>
+							<td style="width:30px; height:30px">
+								<a target="_blank" href="https://docs.google.com/document/d/1fq5WENgOglIWo6ejUwLA_ijzlJ0xqzLM/edit?usp=drive_link&ouid=107133456588313942648&rtpof=true&sd=true">
+									<span class="avatar-user hover-bg-change-slate-300 cursor-pointer">
+										<img src="~/icons/arrow-up-right.svg" />
+									</span>
+								</a>
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+

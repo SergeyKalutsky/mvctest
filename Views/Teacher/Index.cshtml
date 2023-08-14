@@ -1,0 +1,103 @@
+﻿@{
+	ViewData["Title"] = "Учитель";
+}
+
+<div class="container d-flex justify-content-center align-middle h-full">
+	<div class="col w-85 h-full m-0 mt-2">
+		<div class="row w-full h-5 m-0 bg-white drop-shadow">
+			<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 bg-change-slate-300 cursor-pointer">
+				<span class="h-75 d-flex align-self-center font-medium">
+					Профиль
+				</span>
+			</div>
+			<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 cursor-pointer">
+				<span class="h-75 d-flex align-self-center font-medium">
+					Статистика
+				</span>
+			</div>
+			<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 cursor-pointer">
+				<span class="h-75 d-flex align-self-center font-medium">
+					Документы
+				</span>
+			</div>
+			<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 cursor-pointer">
+				<span class="h-75 d-flex align-self-center font-medium">
+					Курсы
+				</span>
+			</div>
+		</div>
+		<div class="row w-full h-75 m-0 mt-sm-3 bg-white pt-3 drop-shadow">
+			<div class="col-3 h-full">
+				<div class="row d-flex justify-content-center align-middle mt-3" style="height:40%">
+					<img src="~/images/test.jpeg" class="avatar-user">
+				</div>
+				<div class="row" style="height:60%"></div>
+			</div>
+			<div class="col-9 h-full">
+				<div class="row m-lg-2" style="height:10%">
+					<h2>Калуцкий Сергей</h2>
+				</div>
+				<div class="row m-lg-2" style="height:20%">
+					<div class="col">
+						<div class="row" style="height:40%">
+							<span>Возраст: 31</span>
+							<span>Телефон: +79998571894</span>
+							<span>email: skalutsky@gmail.com</span>
+						</div>
+					</div>
+					<div class="col">
+					</div>
+				</div>
+				<div class="row m-lg-2 mb-2" style="height:5%">
+					<span class="font-medium text-xl">Расписание на неделю:</span>
+				</div>
+				<div class="row m-lg-2 table-responsive overflow-auto" style="height:65%">
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">День</th>
+								<th scope="col">Время</th>
+								<th scope="col">Название группы</th>
+								<th scope="col">Длительность</th>
+								<th style="width:40px; height:40px">
+									<img src="~/icons/link.svg" />
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							@for (int i = 0; i < 5; i++)
+							{
+								<tr>
+									<td>Четверг, 10.08.2023</td>
+									<td>20:00 — 21:30 </td>
+									<td>Онлайн вт чт 20-00 Сергей (9/3) </td>
+									<td>90 минут</td>
+									<td style="width:40px; height:40px">
+										<a target="_blank" asp-controller="Group" asp-action="Index">
+											<span class="avatar-user hover-bg-change-slate-300 cursor-pointer">
+												<img src="~/icons/arrow-up-right.svg" />
+											</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>Четверг,10.08.2023</td>
+									<td>21:30 — 22:30</td>
+									<td>Вотрин Матвей</td>
+									<td> 60 минут</td>
+									<td style="width:40px; height:40px">
+										<a target="_blank" asp-controller="Group" asp-action="Index">
+											<span class="avatar-user hover-bg-change-slate-300 cursor-pointer">
+												<img src="~/icons/arrow-up-right.svg" />
+											</span>
+										</a>
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

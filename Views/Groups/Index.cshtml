@@ -1,0 +1,119 @@
+﻿@{
+	ViewData["Title"] = "Группы";
+}
+
+<div class="container d-flex justify-content-center align-middle h-full">
+	<div class="col w-85 h-full m-0 mt-2">
+		<div class="row w-full m-0 bg-white drop-shadow" style="height:8%">
+			<div class="col d-flex justify-content-center align-items-center">
+				<div class="row h-50 w-full">
+					<div class="col">
+						<button type="button" class="btn btn-primary btn-block"
+								data-bs-toggle="modal" data-bs-target="#exampleModal">
+							+ Добавить
+						</button>
+						<button type="button" class="btn btn-info btn-block">Фильтр</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row w-full h-full m-0 mt-sm-3 bg-white pt-3 d-flex justify-content-center align-middle drop-shadow">
+			<table class="table table-sm w-85">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Название</th>
+						<th scope="col">Курс</th>
+						<th scope="col">Участники</th>
+						<th scope="col">Преподаватель</th>
+						<th scope="col">Куратор</th>
+						<th scope="col">Тип группы</th>
+						<th scope="col">Статус</th>
+						<th scope="col">Формат</th>
+					</tr>
+				</thead>
+				<tbody>
+					@for (int i = 0; i < 10; i++)
+					{
+						<tr>
+							<td>844550</td>
+							<td>МК онлайн 14.08 в 16-</td>
+							<td>Python Pro</td>
+							<td>5(10)</td>
+							<td>Калуцкий Сергей</td>
+							<td>Новаченко Юлия</td>
+							<td>Мастер Класс</td>
+							<td>Идет набор</td>
+							<td>Онлайн</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Создать новую группу</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<input type="email" class="form-control" placeholder="Название группы">
+					<input class="form-control mt-3" list="datalistOptions" id="exampleDataList1" placeholder="Курс">
+					<datalist id="datalistOptions">
+						<option value="Python Pro"></option>
+						<option value="Python Pro 2"></option>
+						<option value="Python Start 2"></option>
+						<option value="Python Start"></option>
+						<option value="Геймдизайн"></option>
+						<option value="Unity"></option>
+						<option value="Unity++"></option>
+						<option value="Scratch"></option>
+						<option value="Web"></option>
+						<option value="Графический дизайн"></option>
+					</datalist>
+					<input class="form-control mt-3" list="datalistOptions2" id="exampleDataList2" placeholder="Преподаватель">
+					<datalist id="datalistOptions2">
+						<option value="Калуцкий Сергей"></option>
+						<option value="Иванов Петр"></option>
+						<option value="Петров Иван"></option>
+						<option value="Самарин Василий"></option>
+						<option value="Николаев Николай"></option>
+						<option value="Самарина Валя"></option>
+						<option value="Котов Кот"></option>
+					</datalist>
+					<input class="form-control mt-3" list="datalistOptions3" id="exampleDataList3" placeholder="Куратор">
+					<datalist id="datalistOptions3">
+						<option value="Калуцкий Сергей"></option>
+						<option value="Иванов Петр"></option>
+						<option value="Петров Иван"></option>
+						<option value="Самарин Василий"></option>
+						<option value="Николаев Николай"></option>
+						<option value="Самарина Валя"></option>
+						<option value="Котов Кот"></option>
+					</datalist>
+					<input class="form-control mt-3" list="datalistOptions4" id="exampleDataList4" placeholder="Тип группы">
+					<datalist id="datalistOptions4">
+						<option value="Мастер-класс"></option>
+						<option value="Группа"></option>
+						<option value="Интенсив"></option>
+						<option value="Индивидуальная"></option>
+						<option value="Индив. интенсив"></option>
+					</datalist>
+					<div class="form-check mt-3">
+						<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+						<label class="form-check-label" for="flexCheckDefault">
+							Оффлайн
+						</label>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+					<button type="button" class="btn btn-primary">Сохранить</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
