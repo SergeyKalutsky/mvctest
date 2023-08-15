@@ -2,284 +2,54 @@
 	ViewData["Title"] = "Группа";
 }
 
+
 <div class="container d-flex justify-content-center align-middle h-full">
 	<div class="col w-85 h-full m-0 mt-2">
-		<div class="row w-full h-25 m-0 mt-sm-3 bg-white pt-3 drop-shadow d-flex justify-content-center align-items-centerv">
-			<div class="row h-25 ms-lg-3">
-				<div class="row">
-					<h5>
-						Онлайн вт чт 20:00
-						<img src="~/icons/online.svg" width="25px" height="25px" />
-						<span class="avatar-user hover-bg-change-slate-300 cursor-pointer"
-							  style="width:25px; height:25px" data-bs-toggle="modal" data-bs-target="#editModal">
-							<img src="~/icons/pencil.svg" width="30px" height="30px" />
-						</span>
-						<span class="avatar-user hover-bg-change-slate-300 cursor-pointer"
-							  style="width:25px; height:25px" data-bs-toggle="modal" data-bs-target="#addMembers">
-							<img src="~/icons/group-add.svg" width="30px" height="30px" />
-						</span>
-					</h5>
-				</div>
-				<div class="row">
-					<span>Python Start 2021/2022 - 2й год</span>
-				</div>
-			</div>
-			<div class="row h-50 d-flex justify-content-center align-items-center">
-				<div class="row w-full h-full">
-					<div class="col-2 h-full">
-						<div class="row w-full h-full d-flex justify-content-center align-items-center">
-							<div class="col-2 h-50 d-flex justify-content-center align-items-center">
-								<img src="~/icons/students.svg" />
-							</div>
-							<div class="col-1">
-							</div>
-							<div class="col-2 h-50 d-flex justify-content-center align-items-center">
-								<h1>10</h1>
-							</div>
-						</div>
-					</div>
-					<div class="col-5 h-full">
-						<div class="row w-full h-full d-flex justify-content-center align-items-center">
-							<div class="col-2 h-50 d-flex flex-row justify-content-center align-items-center">
-								<img src="~/icons/teacher.svg" />
-							</div>
-							<div class="col-6 h-full d-flex flex-column justify-content-center align-items-center">
-								<span style="width: max-content;">Сергей Калуцкий</span>
-								<span style="width: max-content;">+79998571894</span>
-								<span style="width: max-content;">skalutsky@gmail.com</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-5 h-full">
-						<div class="row w-full h-full d-flex justify-content-center align-items-center">
-							<div class="col-2 h-50 d-flex flex-row justify-content-center align-items-center">
-								<img src="~/icons/curator.svg" />
-							</div>
-							<div class="col-6 h-full d-flex flex-column justify-content-center align-items-center">
-								<span style="width: max-content;">Новаченко Юлия</span>
-								<span style="width: max-content;">+7 (777) 921-06-25</span>
-								<span style="width: max-content;">n.Julie.tt74@gmail.com</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row w-full h-5 m-0 bg-white mt-2 drop-shadow">
-			<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 bg-change-slate-300 cursor-pointer">
-				<span class="h-75 d-flex align-self-center font-medium">
-					<a asp-controller="Group" asp-action="Index">Ученики</a>
-				</span>
-			</div>
-			<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 cursor-pointer">
-				<span class="h-75 d-flex align-self-center font-medium">
-					<a asp-area="" asp-controller="Group" asp-action="Lessons">Уроки</a>
-				</span>
-			</div>
-			<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 cursor-pointer">
-				<span class="h-75 d-flex align-self-center font-medium">
-					<a asp-area="" asp-controller="Group" asp-action="History">История группы</a>
-				</span>
-			</div>
-			<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 cursor-pointer">
-				<span class="h-75 d-flex align-self-center font-medium">
-					<a asp-area="" asp-controller="Group" asp-action="Notes">Заметки</a>
-				</span>
-			</div>
-		</div>
+		@await Html.PartialAsync("_PartialNavHeader.cshtml")
 		@*<---------------------------------- Ученики ---------------------------------->*@
-		<div class="row w-full h-full m-0 mt-sm-3 bg-white pt-3 d-flex justify-content-center align-middle drop-shadow">
-			<div class="row bg-slate-100 drop-shadow mt-2" style="height:175px">
-				<div class="col-1 d-flex flex-column justify-content-center align-items-center m-0 p-0">
-					<span class="avatar-user hover-bg-change-slate-300 cursor-pointer"
-						  style="width:35px; height:35px" data-bs-toggle="modal" data-bs-target="#exampleModal">
-						<img src="~/icons/comment.svg" />
-					</span>
-				</div>
-				<div class="col-2 d-flex flex-column justify-content-center align-items-center">
-					<span class="font-medium">Евтушенко Александр</span>
-					<span>13 лет</span>
-				</div>
-				<div class="col-7 d-flex justify-content-center align-items-center">
-					<div class="row w-75 h-50">
-						<div class="row h-50">
-							@for (int i = 0; i < 18; i++)
-							{
-								<span class="square"></span>
-							}
+		<div class="row w-full m-0 mt-sm-3 bg-white pt-2 pb-4 d-flex justify-content-center drop-shadow">
+			@for (int j = 0; j < 6; j++)
+			{
+				<div class="row bg-slate-100 drop-shadow mt-2" style="height:120px">
+					<div class="col-1 d-flex flex-column justify-content-center align-items-center m-0 p-0">
+						<span class="avatar-user hover-bg-change-slate-300 cursor-pointer"
+							  style="width:35px; height:35px" data-bs-toggle="modal" data-bs-target="#exampleModal">
+							<img src="~/icons/comment.svg" />
+						</span>
+					</div>
+					<div class="col-2 d-flex flex-column justify-content-center align-items-center">
+						<span class="font-medium">Евтушенко Александр</span>
+						<span>13 лет</span>
+					</div>
+					<div class="col-7 d-flex justify-content-center align-items-center">
+						<div class="row w-75 h-50">
+							<div class="row h-50">
+								@for (int i = 0; i < 18; i++)
+								{
+									<span class="square"></span>
+								}
+							</div>
+							<div class="row h-50" style="margin-top: 4px;">
+								@for (int i = 0; i < 18; i++)
+								{
+									<span class="square"></span>
+								}
+							</div>
 						</div>
-						<div class="row h-50" style="margin-top: 4px;">
-							@for (int i = 0; i < 18; i++)
-							{
-								<span class="square"></span>
-							}
+					</div>
+					<div class="col-2 d-flex justify-content-center align-items-center">
+						<div class="btn-group dropright">
+							<button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Зачислен 10.08.2023
+							</button>
+							<div class="dropdown-menu relative">
+								<a class="dropdown-item" href="#">Перевести</a>
+								<a class="dropdown-item" href="#">Отчислить</a>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-2 d-flex justify-content-center align-items-center">
-					<div class="btn-group dropright">
-						<button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Зачислен 10.08.2023
-						</button>
-						<div class="dropdown-menu relative">
-							<a class="dropdown-item" href="#">Перевести</a>
-							<a class="dropdown-item" href="#">Отчислить</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row bg-slate-100 drop-shadow mt-3" style="height:175px">
-				<div class="col-1 d-flex flex-column justify-content-center align-items-center m-0 p-0">
-					<span class="avatar-user hover-bg-change-slate-300 cursor-pointer" style="width:35px; height:35px">
-						<img src="~/icons/comment.svg" />
-					</span>
-				</div>
-				<div class="col-2 d-flex flex-column justify-content-center align-items-center">
-					<span class="font-medium">Поляков Николай</span>
-					<span>12 лет</span>
-				</div>
-				<div class="col-7 d-flex justify-content-center align-items-center">
-					<div class="row w-75 h-50">
-						<div class="row h-50">
-							@for (int i = 0; i < 18; i++)
-							{
-								<span class="square"></span>
-							}
-						</div>
-						<div class="row h-50" style="margin-top: 4px;">
-							@for (int i = 0; i < 18; i++)
-							{
-								<span class="square"></span>
-							}
-						</div>
-					</div>
-				</div>
-				<div class="col-2 d-flex justify-content-center align-items-center">
-					<div class="btn-group dropright">
-						<button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Переведен 9.08.2023
-						</button>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Перевести</a>
-							<a class="dropdown-item" href="#">Отчислить</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row bg-slate-100 drop-shadow mt-3" style="height:175px">
-				<div class="col-1 d-flex flex-column justify-content-center align-items-center m-0 p-0">
-					<span class="avatar-user hover-bg-change-slate-300 cursor-pointer" style="width:35px; height:35px">
-						<img src="~/icons/comment.svg" />
-					</span>
-				</div>
-				<div class="col-2 d-flex flex-column justify-content-center align-items-center">
-					<span class="font-medium">Пожидаева Вика</span>
-					<span>15 лет</span>
-				</div>
-				<div class="col-7 d-flex justify-content-center align-items-center">
-					<div class="row w-75 h-50">
-						<div class="row h-50">
-							@for (int i = 0; i < 18; i++)
-							{
-								<span class="square"></span>
-							}
-						</div>
-						<div class="row h-50" style="margin-top: 4px;">
-							@for (int i = 0; i < 18; i++)
-							{
-								<span class="square"></span>
-							}
-						</div>
-					</div>
-				</div>
-				<div class="col-2 d-flex justify-content-center align-items-center">
-					<div class="btn-group dropright">
-						<button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Отчислен 8.08.2023
-						</button>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Перевести</a>
-							<a class="dropdown-item" href="#">Отчислить</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row bg-slate-100 drop-shadow mt-3" style="height:175px">
-				<div class="col-1 d-flex flex-column justify-content-center align-items-center m-0 p-0">
-					<span class="avatar-user hover-bg-change-slate-300 cursor-pointer" style="width:35px; height:35px">
-						<img src="~/icons/comment.svg" />
-					</span>
-				</div>
-				<div class="col-2 d-flex flex-column justify-content-center align-items-center">
-					<span class="font-medium">Пожидаева Вика</span>
-					<span>15 лет</span>
-				</div>
-				<div class="col-7 d-flex justify-content-center align-items-center">
-					<div class="row w-75 h-50">
-						<div class="row h-50">
-							@for (int i = 0; i < 18; i++)
-							{
-								<span class="square"></span>
-							}
-						</div>
-						<div class="row h-50" style="margin-top: 4px;">
-							@for (int i = 0; i < 18; i++)
-							{
-								<span class="square"></span>
-							}
-						</div>
-					</div>
-				</div>
-				<div class="col-2 d-flex justify-content-center align-items-center">
-					<div class="btn-group dropright">
-						<button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Отчислен 8.08.2023
-						</button>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Перевести</a>
-							<a class="dropdown-item" href="#">Отчислить</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row bg-slate-100 drop-shadow mt-3" style="height:175px">
-				<div class="col-1 d-flex flex-column justify-content-center align-items-center m-0 p-0">
-					<span class="avatar-user hover-bg-change-slate-300 cursor-pointer" style="width:35px; height:35px">
-						<img src="~/icons/comment.svg" />
-					</span>
-				</div>
-				<div class="col-2 d-flex flex-column justify-content-center align-items-center">
-					<span class="font-medium">Пожидаева Вика</span>
-					<span>15 лет</span>
-				</div>
-				<div class="col-7 d-flex justify-content-center align-items-center">
-					<div class="row w-75 h-50">
-						<div class="row h-50">
-							@for (int i = 0; i < 18; i++)
-							{
-								<span class="square"></span>
-							}
-						</div>
-						<div class="row h-50" style="margin-top: 4px;">
-							@for (int i = 0; i < 18; i++)
-							{
-								<span class="square"></span>
-							}
-						</div>
-					</div>
-				</div>
-				<div class="col-2 d-flex justify-content-center align-items-center">
-					<div class="btn-group dropright">
-						<button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Отчислен 8.08.2023
-						</button>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Перевести</a>
-							<a class="dropdown-item" href="#">Отчислить</a>
-						</div>
-					</div>
-				</div>
-			</div>
+			}
 		</div>
 	</div>
 

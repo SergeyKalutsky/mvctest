@@ -1,0 +1,85 @@
+﻿<div class="row w-full m-0 bg-white pt-3
+					drop-shadow d-flex justify-content-center
+					align-items-centerv" style="height:20%">
+	<div class="row h-25 ms-lg-3">
+		<div class="row">
+			<div class="container d-flex flex-row">
+				<h5 style="margin:0;margin-right:5px">
+					Онлайн вт чт 20:00
+				</h5>
+				<img src="~/icons/online.svg" width="25px" height="25px" />
+				<span class="avatar-user hover-bg-change-slate-300 cursor-pointer"
+					  style="width:30px; height:30px" data-bs-toggle="modal" data-bs-target="#editModal">
+					<img src="~/icons/pencil.svg" width="35px" height="35px" />
+				</span>
+				<span class="avatar-user hover-bg-change-slate-300 cursor-pointer"
+					  style="width:30px; height:30px" data-bs-toggle="modal" data-bs-target="#addMembers">
+					<img src="~/icons/group-add.svg" width="35px" height="35px" />
+				</span>
+			</div>
+			<span style="font-size:14px">Python Start 2021/2022 - 2й год</span>
+		</div>
+	</div>
+	<div class="row h-50 d-flex justify-content-center align-items-center">
+		<div class="row w-full h-full">
+			<div class="col-2 h-full">
+				<div class="row w-full h-full d-flex justify-content-center align-items-center">
+					<div class="col-2 h-50 d-flex justify-content-center align-items-center">
+						<img src="~/icons/students.svg" />
+					</div>
+					<div class="col-1">
+					</div>
+					<div class="col-2 h-50 d-flex justify-content-center align-items-center">
+						<h3>10</h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-5 h-full">
+				<div class="row w-full h-full d-flex justify-content-center align-items-center">
+					<div class="col-2 h-50 d-flex flex-row justify-content-center align-items-center">
+						<img src="~/icons/teacher.svg" />
+					</div>
+					<div class="col-6 h-full d-flex flex-column justify-content-center align-items-center">
+						<span style="width: max-content; font-size:14px">Сергей Калуцкий</span>
+						<span style="width: max-content; font-size:14px">+79998571894</span>
+						<span style="width: max-content; font-size:14px">skalutsky@gmail.com</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-5 h-full">
+				<div class="row w-full h-full d-flex justify-content-center align-items-center">
+					<div class="col-2 h-50 d-flex flex-row justify-content-center align-items-center">
+						<img src="~/icons/curator.svg" />
+					</div>
+					<div class="col-6 h-full d-flex flex-column justify-content-center align-items-center">
+						<span style="width: max-content; font-size:14px">Новаченко Юлия</span>
+						<span style="width: max-content; font-size:14px">+7 (777) 921-06-25</span>
+						<span style="width: max-content; font-size:14px">n.Julie.tt74@gmail.com</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row w-full m-0 bg-white mt-2 drop-shadow" style="height:30px">
+	<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 cursor-pointer">
+		<span class="h-75 d-flex align-self-center font-medium align-items-center">
+			<a asp-controller="Group" asp-action="Index">Ученики</a>
+		</span>
+	</div>
+	<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 cursor-pointer">
+		<span class="h-75 d-flex align-self-center font-medium align-items-center" style="font-size:15px">
+			<a asp-area="" asp-controller="Group" asp-action="Lessons">Уроки</a>
+		</span>
+	</div>
+	<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 cursor-pointer" style="font-size:15px">
+		<span class="h-75 d-flex align-self-center font-medium align-items-center">
+			<a asp-area="" asp-controller="Group" asp-action="History">История группы</a>
+		</span>
+	</div>
+	<div class="col d-flex justify-content-center align-middle hover-bg-change-slate-300 cursor-pointer" style="font-size:15px">
+		<span class="h-75 d-flex align-self-center font-medium align-items-center">
+			<a asp-area="" asp-controller="Group" asp-action="Notes">Заметки</a>
+		</span>
+	</div>
+</div>
