@@ -5,103 +5,34 @@
 <div class="container d-flex justify-content-center align-middle h-full">
 	<div class="col w-85 h-full m-0 mt-2">
 		@await Html.PartialAsync("_PartialNavHeader.cshtml")
-		<div class="row w-full h-full m-0 mt-sm-3 bg-white pt-3 d-flex justify-content-center align-middle drop-shadow">
-			<div class="row bg-slate-100 drop-shadow mt-2 d-flex justify-content-center align-middle" style="height:150px; width:95%">
-				<div class="col-3 align-self-center d-flex flex-column justify-content-center align-middle" style="height:90%">
-					<div class="row d-flex align-middle" style="margin-left:2%">
-						<div class="avatar-user hover-bg-change-slate-300 cursor-pointer col-2 d-flex flex-row justify-content-center align-items-center" style="width:30px;height:30px">
-							<img src="~/icons/copy.svg" />
+		<div class="row w-full m-0 mt-sm-3 bg-white pt-3 pb-4 d-flex justify-content-center align-middle drop-shadow">
+			@for (int i = 0; i < 3; i++)
+			{
+				<div class="row bg-slate-100 drop-shadow mt-2 d-flex justify-content-center align-middle" style="height:140px; width:95%">
+					<div class="col-3 align-self-center d-flex flex-column justify-content-center align-middle" style="height:90%">
+						<div class="row d-flex align-middle" style="margin-left:2%">
+							<div class="avatar-user hover-bg-change-slate-300 cursor-pointer col-2 d-flex flex-row justify-content-center align-items-center" style="width:30px;height:30px">
+								<img src="~/icons/copy.svg" />
+							</div>
+							<div class="avatar-user hover-bg-change-slate-300 cursor-pointer col-2 d-flex flex-row justify-content-center align-items-center" style="width:30px;height:30px">
+								<img src="~/icons/pencil.svg" />
+							</div>
+							<div class="avatar-user hover-bg-change-slate-300 cursor-pointer col-2 d-flex flex-row justify-content-center align-items-center" style="width:30px;height:30px">
+								<img src="~/icons/delete.svg" />
+							</div>
 						</div>
-						<div class="avatar-user hover-bg-change-slate-300 cursor-pointer col-2 d-flex flex-row justify-content-center align-items-center" style="width:30px;height:30px">
-							<img src="~/icons/pencil.svg" />
-						</div>
-						<div class="avatar-user hover-bg-change-slate-300 cursor-pointer col-2 d-flex flex-row justify-content-center align-items-center" style="width:30px;height:30px">
-							<img src="~/icons/delete.svg" />
-						</div>
+						<span class="font-medium" style="margin-top:3%;font-size:20px">Евтушенко Александр</span>
+						<span style="margin-top:1%;font-size:14px;font-style:italic">Калуцкий Сергей</span>
+						<span style="margin-top:1%;font-size:14px">13.08.2023</span>
 					</div>
-					<span class="font-medium" style="margin-top:3%;font-size:20px">Евтушенко Александр</span>
-					<span style="margin-top:1%;font-size:14px;font-style:italic">Калуцкий Сергей</span>
-					<span style="margin-top:1%;font-size:14px">13.08.2023</span>
-				</div>
-				<div class="col-9 d-flex justify-content-center align-middle" style="height:100%">
-					<textarea class="align-self-center" 
-					style="width:95%; height:80%" 
-					id="TITLE" 
-					disabled placeholder="Ребенок способный, но ленивый"></textarea>
-				</div>
-			</div>
-			<div class="row bg-slate-100 drop-shadow mt-2 d-flex justify-content-center align-middle" style="height:150px; width:95%">
-				<div class="col-3 align-self-center d-flex flex-column justify-content-center align-middle" style="height:90%">
-					<div class="row d-flex align-middle" style="margin-left:2%">
-						<div class="avatar-user hover-bg-change-slate-300 cursor-pointer col-2 d-flex flex-row justify-content-center align-items-center" style="width:30px;height:30px">
-							<img src="~/icons/copy.svg" />
-						</div>
-						<div class="avatar-user hover-bg-change-slate-300 cursor-pointer col-2 d-flex flex-row justify-content-center align-items-center" style="width:30px;height:30px">
-							<img src="~/icons/pencil.svg" />
-						</div>
-						<div class="avatar-user hover-bg-change-slate-300 cursor-pointer col-2 d-flex flex-row justify-content-center align-items-center" style="width:30px;height:30px">
-							<img src="~/icons/delete.svg" />
-						</div>
+					<div class="col-9 d-flex justify-content-center align-middle" style="height:100%">
+						<textarea class="align-self-center"
+								  style="width:95%; height:80%"
+								  id="TITLE"
+								  disabled placeholder="Ребенок способный, но ленивый"></textarea>
 					</div>
-					<span class="font-medium" style="margin-top:3%;font-size:20px">Пожидаева Вика</span>
-					<span style="margin-top:1%;font-size:14px;font-style:italic">Новаченко Юлия</span>
-					<span style="margin-top:1%;font-size:14px">9.08.2023</span>
 				</div>
-				<div class="col-9 d-flex justify-content-center align-middle" style="height:100%">
-					<textarea class="align-self-center"
-							  style="width:95%; height:80%; color:black"
-							  id="TITLE"
-							  disabled placeholder="Берут паузу на лето"></textarea>
-				</div>
-			</div>
-			<div class="row bg-slate-100 drop-shadow mt-2 d-flex justify-content-center align-middle" style="height:150px; width:95%">
-				<div class="col-3 align-self-center d-flex flex-column justify-content-center align-middle" style="height:90%">
-					<div class="row d-flex align-middle" style="margin-left:2%">
-						<div class="avatar-user hover-bg-change-slate-300 cursor-pointer col-2 d-flex flex-row justify-content-center align-items-center" style="width:30px;height:30px">
-							<img src="~/icons/copy.svg" />
-						</div>
-						<div class="avatar-user hover-bg-change-slate-300 cursor-pointer col-2 d-flex flex-row justify-content-center align-items-center" style="width:30px;height:30px">
-							<img src="~/icons/pencil.svg" />
-						</div>
-						<div class="avatar-user hover-bg-change-slate-300 cursor-pointer col-2 d-flex flex-row justify-content-center align-items-center" style="width:30px;height:30px">
-							<img src="~/icons/delete.svg" />
-						</div>
-					</div>
-					<span class="font-medium" style="margin-top:3%;font-size:20px">Евтушенко Александр</span>
-					<span style="margin-top:1%;font-size:14px;font-style:italic">Калуцкий Сергей</span>
-					<span style="margin-top:1%;font-size:14px">13.08.2023</span>
-				</div>
-				<div class="col-9 d-flex justify-content-center align-middle" style="height:100%">
-					<textarea class="align-self-center"
-							  style="width:95%; height:80%"
-							  id="TITLE"
-							  disabled placeholder="Ребенок способный, но ленивый"></textarea>
-				</div>
-			</div>
-			<div class="row bg-slate-100 drop-shadow mt-2 d-flex justify-content-center align-middle" style="height:150px; width:95%">
-				<div class="col-3 align-self-center d-flex flex-column justify-content-center align-middle" style="height:90%">
-					<div class="row d-flex align-middle" style="margin-left:2%">
-						<div class="avatar-user hover-bg-change-slate-300 cursor-pointer col-2 d-flex flex-row justify-content-center align-items-center" style="width:30px;height:30px">
-							<img src="~/icons/copy.svg" />
-						</div>
-						<div class="avatar-user hover-bg-change-slate-300 cursor-pointer col-2 d-flex flex-row justify-content-center align-items-center" style="width:30px;height:30px">
-							<img src="~/icons/pencil.svg" />
-						</div>
-						<div class="avatar-user hover-bg-change-slate-300 cursor-pointer col-2 d-flex flex-row justify-content-center align-items-center" style="width:30px;height:30px">
-							<img src="~/icons/delete.svg" />
-						</div>
-					</div>
-					<span class="font-medium" style="margin-top:3%;font-size:20px">Евтушенко Александр</span>
-					<span style="margin-top:1%;font-size:14px;font-style:italic">Калуцкий Сергей</span>
-					<span style="margin-top:1%;font-size:14px">13.08.2023</span>
-				</div>
-				<div class="col-9 d-flex justify-content-center align-middle" style="height:100%">
-					<textarea class="align-self-center"
-							  style="width:95%; height:80%"
-							  id="TITLE"
-							  disabled placeholder="Ребенок способный, но ленивый"></textarea>
-				</div>
-			</div>
+			}
 		</div>
 	</div>
 </div>
