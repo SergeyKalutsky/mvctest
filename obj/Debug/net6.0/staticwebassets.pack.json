@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\icons\\arrow-up-right.svg"
     },
     {
+      "Id": "C:\\ws\\itm\\mvctest\\wwwroot\\icons\\calendar.svg",
+      "PackagePath": "staticwebassets\\icons\\calendar.svg"
+    },
+    {
       "Id": "C:\\ws\\itm\\mvctest\\wwwroot\\icons\\comment.svg",
       "PackagePath": "staticwebassets\\icons\\comment.svg"
     },

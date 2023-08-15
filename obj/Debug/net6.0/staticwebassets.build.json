@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pkW0RPVxbIZ9qasUYRzdR4gBVIhCnLHbxEggJFq2DG4=",
+  "Hash": "B4L7s6V2/p6XGN6txIyKMpdj3MWcfrDrtxK89ty3NCk=",
   "Source": "mvctest",
   "BasePath": "_content/mvctest",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\icons\\arrow-up-right.svg"
+    },
+    {
+      "Identity": "C:\\ws\\itm\\mvctest\\wwwroot\\icons\\calendar.svg",
+      "SourceId": "mvctest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\ws\\itm\\mvctest\\wwwroot\\",
+      "BasePath": "_content/mvctest",
+      "RelativePath": "icons/calendar.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\icons\\calendar.svg"
     },
     {
       "Identity": "C:\\ws\\itm\\mvctest\\wwwroot\\icons\\comment.svg",
