@@ -1,5 +1,6 @@
 ﻿@{
 	ViewData["Title"] = "Группа";
+
 }
 
 
@@ -58,7 +59,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Добавить заметку об ученике</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Добавить заметку</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
@@ -67,6 +68,52 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
 					<button type="button" class="btn btn-primary">Сохранить</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="editSchedule" tabindex="-1" aria-labelledby="editSchedule" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="editSchedule">Расписание</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body" id="timeSelect">
+					<div class="d-flex flex-row">
+						<span class="day-week" value="Понедельник">Пн</span>
+						<span class="day-week" value="Вторник">Вт</span>
+						<span class="day-week" value="Среда">Ср</span>
+						<span class="day-week" value="Четверг">Чт</span>
+						<span class="day-week" value="Пятница">Пт</span>
+						<span class="day-week" value="Суббота">Сб</span>
+						<span class="day-week" value="Воскресенье">Вс</span>
+					</div>
+					<div style="margin-top:20px">
+						<div class="form-check">
+							<input class="form-check-input-custom" type="checkbox">
+							<label class="form-check-label" for="flexCheckDefault">
+								Все уроки в одно время
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+					<button type="button" class="btn btn-primary">Сохранить</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="archiveGroup" tabindex="-1" aria-labelledby="archiveGroup" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body d-flex justify-content-center align-items-center">
+					<h4>Перенести группу в архив?</h4>
+				</div>
+				<div class="modal-footer  d-flex justify-content-center align-items-center">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+					<button type="button" class="btn btn-primary">Архивировать</button>
 				</div>
 			</div>
 		</div>
@@ -202,3 +249,86 @@
 		</div>
 	</div>
 </div>
+<script>
+	function buildTimePicker(dayOftheWeek) {
+		const newDiv = document.createElement("div");
+		newDiv.className = 'd-flex flex-row'
+		const start = document.createElement("input");
+		start.className = 'form-control'
+		start.placeholder = 'Время начала'
+		start.type = 'time'
+		const minutes = document.createElement("input");
+		minutes.className = 'form-control'
+		minutes.placeholder = 'Мин.'
+		const end = document.createElement("input");
+		end.className = 'form-control'
+		end.placeholder = 'Время конца'
+		end.type = 'time'
+		let i = 0
+		for (const element of [newDiv, start, end, minutes]) {
+			i += 1
+			if (i >= 1) {
+				element.style.marginLeft = '5px'
+			}
+			element.style.marginTop = '10px'
+		}
+		if (dayOftheWeek !== '') {
+			const label = document.createElement("label");
+			label.className = 'form-check-label d-flex align-items-center'
+			label.textContent = dayOftheWeek
+			newDiv.appendChild(label)
+			newDiv.id = dayOftheWeek
+		} else {
+			newDiv.id = 'singleTime'
+		}
+		newDiv.appendChild(start)
+		newDiv.appendChild(minutes)
+		newDiv.appendChild(end)
+
+		return newDiv
+	}
+	let spans = document.querySelectorAll(".day-week");
+	let checkBox = document.querySelector(".form-check-input-custom");
+	for (let span of spans) {
+		span.addEventListener('click', () => {
+			if (span.classList.contains('day-week')) {
+				span.className = 'day-week-selected'
+				if (checkBox.checked) return
+				const newDiv = buildTimePicker(span.getAttribute('value'))
+				modalDiv = document.querySelector("#timeSelect")
+				modalDiv.appendChild(newDiv)
+			} else {
+				span.className = 'day-week'
+				if (checkBox.checked) return
+				const value = span.getAttribute('value')
+				removeDiv = document.querySelector(`#${value}`)
+				modalDiv.removeChild(removeDiv)
+			}
+		})
+	}
+	checkBox.addEventListener('change', () => {
+		modalDiv = document.querySelector("#timeSelect")
+		if (checkBox.checked) {
+			for (let span of spans) {
+				if (span.classList.contains('day-week-selected')) {
+					const value = span.getAttribute('value')
+					removeDiv = document.querySelector(`#${value}`)
+					modalDiv.removeChild(removeDiv)
+				}
+			}
+			const newDiv = buildTimePicker('')
+			modalDiv.appendChild(newDiv)
+		} else {
+			removeDiv = document.querySelector(`#singleTime`)
+			modalDiv.removeChild(removeDiv)
+			for (let span of spans) {
+				if (span.classList.contains('day-week-selected')) {
+					const newDiv = buildTimePicker(span.getAttribute('value'))
+					modalDiv = document.querySelector("#timeSelect")
+					modalDiv.appendChild(newDiv)
+				}
+			}
+		}
+	})
+
+</script>

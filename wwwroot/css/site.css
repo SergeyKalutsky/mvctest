@@ -6,7 +6,7 @@ html {
 input:read-only,
 textarea:read-only,
 [contenteditable]:read-only {
-    padding:5px;
+    padding: 5px;
     background-color: white !important;
 }
 
@@ -60,6 +60,7 @@ img {
 .h-65 {
     height: 65%
 }
+
 .w-85 {
     width: 85%
 }
@@ -204,3 +205,48 @@ thead tr:nth-child(1) th {
     z-index: 10000;
 }
 
+.day-week {
+    border-radius: 50% !important;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
+    cursor: pointer
+}
+
+    .day-week:hover {
+        background-color: rgb(203 213 225);
+    }
+
+.day-week-selected {
+    border-radius: 50% !important;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
+    cursor: pointer;
+    background-color: rgb(203 213 225)
+}
+
+.form-check-input-custom {
+    border-radius: 0.25em;
+    float: left;
+    margin-left: -1.5em;
+    padding: 5px;
+    background-color: white !important;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.25em;
+    vertical-align: top;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid rgba(0,0,0,.25);
+}
